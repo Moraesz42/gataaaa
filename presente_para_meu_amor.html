@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#190d24">
+<title>Um pedacinho do meu coração 💗</title>
+<style>
+:root{--bg:#160d20;--pink:#ff8fb3;--rose:#ff5d91;--cream:#fff4f0;--gold:#ffdca8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--cream);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 20% 10%,#542344 0,transparent 42%),radial-gradient(ellipse at 90% 65%,#33204f 0,transparent 40%),linear-gradient(145deg,#100b18,#24102b 60%,#120d20);overflow-x:hidden}
+.stars,.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;width:2px;height:2px;background:#fff5e8;border-radius:50%;opacity:.65;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{50%{opacity:.15;transform:scale(.6)}}
+.float-heart{position:absolute;bottom:-30px;color:#ff91b6;opacity:0;animation:rise linear forwards}
+@keyframes rise{10%{opacity:.7}100%{transform:translateY(-110vh) rotate(28deg);opacity:0}}
+main{position:relative;z-index:1;width:min(760px,92%);margin:auto;padding:34px 0 60px}
+.topline{text-align:center;text-transform:uppercase;letter-spacing:.24em;font:10px Arial,sans-serif;color:#f8b8ce}
+.hero{text-align:center;padding:36px 10px 28px}
+.moon{width:90px;height:90px;margin:0 auto 23px;border-radius:50%;display:grid;place-items:center;font-size:43px;background:linear-gradient(145deg,#ffe9c7,#ff9ebc);box-shadow:0 0 50px #ff78a34d, inset -9px -8px 20px #d85b8b33}
+h1{font-size:clamp(38px,8vw,66px);line-height:1.02;font-weight:normal;letter-spacing:-.04em;margin:0 auto 18px;max-width:650px}
+h1 em{color:var(--pink);font-weight:normal}
+.subtitle{font:14px/1.8 Arial,sans-serif;color:#e9cfdf;max-width:440px;margin:auto}
+button{font:600 13px Arial,sans-serif;letter-spacing:.02em;border:0;cursor:pointer;transition:transform .2s,filter .2s}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.primary{margin-top:26px;padding:15px 23px;border-radius:999px;color:#321325;background:linear-gradient(100deg,#ffd8a8,#ff8fb3);box-shadow:0 8px 25px #ff6b9d30}
+.hint{font:11px Arial,sans-serif;color:#c7a7c4;margin-top:12px}
+.panel{border:1px solid #ffb7d326;background:#fff7ff09;backdrop-filter:blur(10px);border-radius:24px;padding:25px;margin:18px 0;box-shadow:0 18px 55px #08030c25}
+.panel h2{font-size:27px;font-weight:normal;margin:0 0 12px}
+.panel p{font-size:15px;line-height:1.85;color:#f1dfe9;margin:0}
+.hidden{display:none!important}
+.envelope-wrap{text-align:center;padding:18px 0 8px}
+.envelope{position:relative;width:180px;height:120px;margin:12px auto 20px;cursor:pointer;filter:drop-shadow(0 12px 20px #05020a66);transition:transform .25s}
+.envelope:hover{transform:translateY(-4px) rotate(-1deg)}
+.env-back{position:absolute;inset:0;background:#e7779f;border-radius:8px}
+.env-paper{position:absolute;left:14px;right:14px;top:9px;height:94px;background:#fff3e9;border-radius:5px;transition:transform .7s;display:grid;place-items:center;color:#b54b76;font-size:28px}
+.env-front{position:absolute;inset:0;background:#ff9fba;clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);border-radius:0 0 8px 8px}
+.env-flap{position:absolute;inset:0;background:#ffc0d1;clip-path:polygon(0 0,100% 0,50% 60%);transform-origin:top;transition:transform .6s;z-index:2}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+.envelope.open .env-paper{transform:translateY(-50px);z-index:1}
+.tiny{font:11px Arial,sans-serif;color:#d9b9d2}
+.letter{background:#fff3e9;color:#49273c;border-radius:18px;padding:25px 23px;margin-top:20px;line-height:1.9;font-size:16px;box-shadow:0 14px 35px #0003;animation:appear .5s ease}
+.letter .sign{color:#c24c7d;font-style:italic;font-size:21px;margin-top:14px}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.section-label{text-transform:uppercase;letter-spacing:.2em;font:10px Arial,sans-serif;color:#f4a8c5;margin-bottom:13px}
+.memories{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.memory{min-height:116px;border:1px solid #ffb7d333;background:linear-gradient(145deg,#ffb4cf16,#ffffff06);border-radius:16px;padding:14px 10px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:9px}
+.memory .emoji{font-size:25px}.memory strong{font-size:14px;font-weight:normal}.memory small{font:11px/1.5 Arial,sans-serif;color:#d7b9d0}
+.question{text-align:center}
+.question h2{font-size:clamp(25px,5vw,34px);line-height:1.25}
+.choices{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.choice{padding:13px 17px;border-radius:999px;background:#ffffff10;border:1px solid #ffb7d34d;color:#fff0f5}
+.choice.yes{background:linear-gradient(100deg,#ffd8a8,#ff8fb3);color:#38162b}
+.answer{min-height:28px;margin-top:18px!important;color:#ffbfd4!important}
+footer{text-align:center;padding:26px 10px 0;color:#c9a9c7;font:11px/1.8 Arial,sans-serif}
+footer span{color:#ff91b6}
+@media(max-width:520px){main{padding-top:24px}.hero{padding-top:28px}.panel{padding:20px 17px}.memories{grid-template-columns:1fr}.memory{min-height:86px;flex-direction:row;align-items:center;text-align:left;justify-content:flex-start;padding:15px 20px}.memory small{display:block}.memory .emoji{width:38px}.letter{padding:22px 18px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div><div class="hearts" id="hearts"></div>
+<main>
+  <div class="topline">feito com carinho · só pra você</div>
+  <section class="hero">
+    <div class="moon">♡</div>
+    <h1>Se eu pudesse te dar o <em>mundo…</em></h1>
+    <p class="subtitle">…ainda ia parecer pouco perto da sorte que é ter você no meu.</p>
+    <button class="primary" id="startBtn">Descobrir meu presente ✨</button>
+    <div class="hint">psiu… tem coisinhas escondidas por aqui</div>
+  </section>
+
+  <section class="panel hidden" id="gift">
+    <div class="section-label">01 · uma pequena surpresa</div>
+    <h2>Uma carta que estava esperando por você 💌</h2>
+    <p>Tem coisas que eu queria te dizer olhando nos seus olhos. Como nem sempre consigo colocar tudo em palavras na hora, deixei um pedacinho do meu coração aqui.</p>
+    <div class="envelope-wrap">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Abrir carta">
+        <div class="env-back"></div><div class="env-paper">♡</div><div class="env-flap"></div><div class="env-front"></div>
+      </div>
+      <div class="tiny">toque no envelope para abrir</div>
+      <article class="letter hidden" id="letter">
+        Meu amor,<br><br>
+        se você pudesse se enxergar pelos meus olhos por um instante, entenderia por que eu sorrio só de pensar em você. Você tem esse jeito especial de deixar os dias mais leves e os momentos simples virarem lembranças que eu quero guardar.<br><br>
+        Eu não prometo ser perfeito, mas prometo continuar escolhendo você: nos dias fáceis, nos dias confusos, nas risadas bobas e nos silêncios confortáveis. Quero construir com você uma coleção de momentos que, um dia, a gente lembre sorrindo e diga: “ainda bem que foi nós dois”.<br><br>
+        Obrigado por existir e por fazer parte da minha vida. Se eu tivesse que escolher de novo, em mil vidas diferentes, ainda procuraria um caminho que me levasse até você.<br>
+        <div class="sign">Com todo o meu amor. Sempre seu. ❤️</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="littleThings">
+    <div class="section-label">02 · coisas que valem ouro</div>
+    <h2>Meu tipo favorito de felicidade</h2>
+    <p>Não precisa ser uma viagem incrível nem um dia perfeito. Às vezes, felicidade é só…</p>
+    <div class="memories">
+      <div class="memory"><div class="emoji">☁️</div><div><strong>Ter você por perto</strong><small>Até um dia comum fica diferente.</small></div></div>
+      <div class="memory"><div class="emoji">😂</div><div><strong>Rir de qualquer besteira</strong><small>Nossas piadas que ninguém entende.</small></div></div>
+      <div class="memory"><div class="emoji">🫶</div><div><strong>Ser o seu lugar seguro</strong><small>E encontrar o meu abraço no seu.</small></div></div>
+    </div>
+  </section>
+
+  <section class="panel question hidden" id="question">
+    <div class="section-label">03 · agora é sua vez</div>
+    <h2>Posso continuar te enchendo de amor… pelo resto da vida? 🥹</h2>
+    <p>Escolha com carinho. (Mas saiba que eu já tenho uma esperança favorita.)</p>
+    <div class="choices">
+      <button class="choice yes" id="yesBtn">SIM, mil vezes sim 💗</button>
+      <button class="choice" id="hugBtn">Só depois de um abraço 🫂</button>
+    </div>
+    <p class="answer" id="answer" aria-live="polite"></p>
+    <button class="primary hidden" id="finalBtn">Uma última coisinha… 🌙</button>
+    <p class="answer hidden" id="finalMessage">Então fecha os olhos por um segundo, imagina meu abraço bem apertado e guarda isso: você é uma das partes mais bonitas da minha vida. Te amo. ❤️</p>
+  </section>
+  <footer>com carinho e um tantinho de saudade <span>♥</span><br>uma página pequena para um amor enorme</footer>
+</main>
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<75;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*4)+'s';s.style.animationDuration=(2+Math.random()*3)+'s';stars.appendChild(s)}
+function reveal(id){document.getElementById(id).classList.remove('hidden')}
+document.getElementById('startBtn').addEventListener('click',()=>{reveal('gift');reveal('littleThings');reveal('question');document.getElementById('startBtn').textContent='Seu presente está aqui 💗';document.getElementById('gift').scrollIntoView({behavior:'smooth',block:'start'});burst()});
+const env=document.getElementById('envelope');
+function openLetter(){env.classList.add('open');reveal('letter');setTimeout(()=>document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'nearest'}),250);burst()}
+env.addEventListener('click',openLetter);env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter()}});
+function burst(){for(let i=0;i<18;i++){const h=document.createElement('span');h.className='float-heart';h.textContent=['♥','♡','✦'][Math.floor(Math.random()*3)];h.style.left=(8+Math.random()*84)+'%';h.style.fontSize=(12+Math.random()*18)+'px';h.style.animationDuration=(3+Math.random()*3)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),6500)}}
+document.getElementById('yesBtn').addEventListener('click',()=>{document.getElementById('answer').textContent='Você acabou de deixar meu coração pulando feito bobo. Vem cá ganhar muitos beijos! 💋';reveal('finalBtn');burst()});
+document.getElementById('hugBtn').addEventListener('click',()=>{document.getElementById('answer').textContent='Pedido aceito. Abraço apertado, beijo na testa e mais uns 37 beijinhos extras. 🫂❤️';reveal('finalBtn');burst()});
+document.getElementById('finalBtn').addEventListener('click',()=>{reveal('finalMessage');document.getElementById('finalMessage').scrollIntoView({behavior:'smooth',block:'center'});burst()});
+</script>
+</body>
+</html>
